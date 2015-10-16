@@ -23,12 +23,12 @@ namespace Subset
         {
 
 
-            var disposableTypes = TypesImplementingInterface(typeof(IPartiallyVisible));
+            var visibleTypes = TypesImplementingInterface(typeof(IPartiallyVisible));
             var booleanValues = new List<bool> { false, true };
             var visibilityLevels = new List<VisibilityLevel> { VisibilityLevel.None, VisibilityLevel.Geo, VisibilityLevel.Full };
 
 
-            foreach (Type type in disposableTypes)
+            foreach (Type type in visibleTypes)
             {
                 var propertiesInType = type.GetProperties();
                 var outputMatrix = BuildMatrix();
